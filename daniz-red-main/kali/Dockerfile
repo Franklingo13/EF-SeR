@@ -11,7 +11,7 @@ RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
 
 #RUN apt-get install python-pip -y
-RUN apt install -y python
+#RUN apt install -y python
 RUN pip install paramiko
 RUN pip install --pre scapy[complete]
 RUN pip install argparse
