@@ -1,0 +1,26 @@
+ 			--->MITM<---
+ 			
+The attacker needs to be on the same network of the victim. The objective of this attack is to claim to be the router and capture all information that user are sending to web pages.
+ 
+To perform this attack 2 programs need to be used.
+
+Bettercap: Used to  do arp-spoofing, dns-spoofing and other functions. (Hint: perform an arp.spoofing in an objective to claim to be the router.)
+
+If is necesary
+    /
+   /
+(sudo) docker-compose run bettercap
+
+SEToolkit: Can perform social enginering attack, this tool helps to clone a web page to obtain the credentials of another user of the network. The option sequence on SEToolkit to clone a custom page is: 1, 2, 5, 3. This also needs a downloaded web page (Hint: Firefox can be used and the downloaded page needs to be saved on data folder).
+
+If is necesary
+    /
+   /
+(sudo) docker-compose run setoolkit
+
+Firefox:
+
+If is necesary
+    /
+   /
+(sudo) docker-compose run firefox

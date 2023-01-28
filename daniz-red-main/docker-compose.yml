@@ -1,0 +1,61 @@
+version: '3.4'
+
+networks:
+  network:
+  
+services:
+  
+  kali:
+    build:
+      context: ./kali
+      dockerfile: Dockerfile
+    container_name: kali
+    image: kali
+    network_mode: host
+    volumes:
+      - ./kali/src:/src/ 
+    ports: 
+      - 4902:4902
+      
+  firefox:
+    image: my-app:latest
+    build: ./fire
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./data:/home
+    network_mode: host
+    
+  burp:
+    build:
+      context: ./burp
+      dockerfile: Dockerfile
+    container_name: burpdock
+    image: burpdock
+    network_mode: host
+    volumes: 
+      - /tmp/.X11-unix:/tmp/.X11-unix 
+      - /tmp/.docker.xauth:/tmp/.docker.xauth
+      - $HOME/.java/.userPrefs:/home/burp/.java/.userPrefs
+      - $HOME/.BurpSuite:/home/burp/.BurpSuite
+      - ./data:/home/burp/data
+    environment:
+      - XAUTHORITY=/tmp/.docker.xauth
+      - DISPLAY=${DISPLAY}
+    ports:
+      - 8080:8080
+  
+  bettercap:
+    image: bettercap/bettercap
+    privileged: true
+    network_mode: host
+    
+  setoolkit:
+    image: warch/social-engineering-toolkit
+    container_name: setoolkit
+    network_mode: host
+    volumes: 
+      - ./data:/home
+     
+

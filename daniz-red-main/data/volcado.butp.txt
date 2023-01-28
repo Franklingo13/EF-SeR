@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2021.8.2" exportTime="Sat Aug 28 14:08:13 UTC 2021">
+  <item>
+    <time>Sat Aug 28 14:07:46 UTC 2021</time>
+    <url><![CDATA[http://192.168.0.115/mutillidae/index.php?page=user-info.php&username=sasdasd&password=asdasda&user-info-php-submit-button=View+Account+Details]]></url>
+    <host ip="192.168.0.115">192.168.0.115</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/mutillidae/index.php?page=user-info.php&username=sasdasd&password=asdasda&user-info-php-submit-button=View+Account+Details]]></path>
+    <extension>php</extension>
+    <request base64="true"><![CDATA[R0VUIC9tdXRpbGxpZGFlL2luZGV4LnBocD9wYWdlPXVzZXItaW5mby5waHAmdXNlcm5hbWU9c2FzZGFzZCZwYXNzd29yZD1hc2Rhc2RhJnVzZXItaW5mby1waHAtc3VibWl0LWJ1dHRvbj1WaWV3K0FjY291bnQrRGV0YWlscyBIVFRQLzEuMQ0KSG9zdDogMTkyLjE2OC4wLjExNQ0KVXNlci1BZ2VudDogTW96aWxsYS81LjAgKFgxMTsgVWJ1bnR1OyBMaW51eCB4ODZfNjQ7IHJ2OjkxLjApIEdlY2tvLzIwMTAwMTAxIEZpcmVmb3gvOTEuMA0KQWNjZXB0OiB0ZXh0L2h0bWwsYXBwbGljYXRpb24veGh0bWwreG1sLGFwcGxpY2F0aW9uL3htbDtxPTAuOSxpbWFnZS93ZWJwLCovKjtxPTAuOA0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuNQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpSZWZlcmVyOiBodHRwOi8vMTkyLjE2OC4wLjExNS9tdXRpbGxpZGFlL2luZGV4LnBocD9wYWdlPXVzZXItaW5mby5waHANCkNvbm5lY3Rpb246IGNsb3NlDQpDb29raWU6IFBIUFNFU1NJRD1kbGtoMGJpZW5vdXVjNmRvNmsyZW4wNWM2cDsgc2hvd2hpbnRzPTENClVwZ3JhZGUtSW5zZWN1cmUtUmVxdWVzdHM6IDENCg0K]]></request>
+    <status></status>
+    <responselength></responselength>
+    <mimetype></mimetype>
+    <response base64="true"></response>
+    <comment></comment>
+  </item>
+</items>

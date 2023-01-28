@@ -1,0 +1,36 @@
+       --->>Cross-site scripting<<---
+
+
+This attack consists on modify values that web aplication uses to send variables between two web sites. To perform this attack we need 3 tools that are already installed on the docker_compose, this 3 tools are: (Hint: Can be deployed from diferent terminals for better results)
+
+-->Firefox: to test the webpage and to capture important data.
+   First, to be abble to use a gui.
+
+   xhost +  , and then:  sudo docker-compose run firefox
+	
+
+-->From here, a docker terminal needs to be used
+
+   Run the following command: (hint: the proxy on 127.0.0.1 need to be set)
+
+
+   If is necesary
+     /
+    /
+   (sudo) docker-compose run burp
+
+
+   -->Burpsuite: to capture packets on the network and obtain a request packet that can be used   to perform the attack. (hint: the packets interception needs to be enabled on burpsuite and could be used to insert custom payloads to exploit this vulnerability (using url encoder))
+      
+      Code:
+      
+      ./bin/burpsuite
+
+
+   -->XSStrike: to perform an automatic cross-site scripting test and generate payloads. (hint: use -u "target with a place to insert code")
+      
+      Code:
+
+      sudo python3 XSStrike/xsstrike.py [commands]
+
+

@@ -1,0 +1,15 @@
+POST /mutillidae/index.php?page=login.php HTTP/1.1
+Host: 192.168.0.115
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://192.168.0.115/mutillidae/index.php?page=login.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 61
+Origin: http://192.168.0.115
+Connection: close
+Cookie: PHPSESSID=qpb2fcq95nlsp9ppfcag2pa9nr; showhints=1
+Upgrade-Insecure-Requests: 1
+
+username=12315&password=1313215&login-php-submit-button=Login
