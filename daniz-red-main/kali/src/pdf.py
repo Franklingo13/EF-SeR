@@ -5,7 +5,8 @@
 import os
 import string
 from time import gmtime, strftime, sleep
-from PyPDF2 import PdfFileMerger
+#from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfMerger
 
 home="/src"+"/archivos"
 
@@ -24,7 +25,7 @@ parser=argparse.ArgumentParser(description="Variable for report") #descripcion d
 parser.add_argument("-v", "--variable", help="Name for pdf") #anade argumento
 
 parser=parser.parse_args() #los argumentos est{en disponibles para el usuario
-
+print(parser.variable)
 
 def list_a():
 
@@ -157,42 +158,20 @@ nombren_f=n_ip(n_f)
 nombren_i=n_ip(n_i)
 
 
-#print("valores")
-
-#print(nombren_t)
-#print(nombren_u)
-#print(nombren_pn)
-#print(nombren_ap)
-#print(nombren_f)
-#print(nombren_i)
-#input("aqui toy")
-#print("valores")
-
-
-#----------  NOMBRE TCP
-
-#Obtencion de puertos TCP abiertos
-
-
- # 192.168.56.102vunlnmaptcp.xml
-
-
-#python3 tcp.py -i 104-sin.xml -s 104-sin.pdf -l Obtencion-de-puertos-TCP-abiertos
-
-#print("tcp")
+"""
+  ----------  NOMBRE TCP --------------
+  Obtencion de puertos TCP abiertos
+  python3 tcp.py -i 104-sin.xml -s 104-sin.pdf -l Obtencion-de-puertos-TCP-abiertos
+"""
 tcp="1.2_Obtención-de-puertos-TCP-abiertos"
 
 for s in range(0,len(nombren_t)):
 	nt=n_t[s]
 
 	md=nombren_t[s].replace("xml","pdf")
-
+	print("---- tcp 1 -i "+str(n_t[s])+" -s "+str(md)+" -l " + tcp)
 	comandt="/usr/bin/python3 /src/tcp.py -i "+str(n_t[s])+" -s "+str(md)+" -l "+tcp
 	os.system(comandt)
-	
-	
-
-		#                   3 mover pdf
 
 
 	ml=nombren_t[s].replace("xml","pdf")
@@ -214,11 +193,10 @@ for s in range(0,len(nombren_t)):
 	os.system(com)
 
 
-#----------  NOMBRE UDP
-
-#Obtencion de puertos UDP abiertos
-
-#print("udp")
+"""
+  ----------  NOMBRE UDP ----------
+  Obtencion de puertos UDP abiertos
+"""
 udp="1.2_Obtención-de-puertos-UDP-abiertos"
 
 for s in range(0,len(nombren_u)):
@@ -226,11 +204,9 @@ for s in range(0,len(nombren_u)):
 
 	md=nombren_u[s].replace("xml","pdf")
 
+	print("---- tcp 2 -i "+str(n_t[s])+" -s "+str(md)+" -l " + tcp)
 	comandt="/usr/bin/python3 /src/tcp.py -i "+str(n_u[s])+" -s "+str(md)+" -l "+udp
 	os.system(comandt)
-
-		#                   3 mover pdf
-
 
 	ml=nombren_u[s].replace("xml","pdf")
 
@@ -250,13 +226,10 @@ for s in range(0,len(nombren_u)):
 	os.system(com)
 
 
-
-#-------------  LNMAPTCP.XML   # 192.168.56.102vunlnmaptcp.xml
-
-
-# --------         N_PN
-
-
+"""
+  ------------  LNMAPTCP.XML   # 192.168.56.102vunlnmaptcp.xml
+  --------         N_PN
+"""
 
 for s in range(0,len(nombren_pn)):
 
@@ -275,40 +248,28 @@ for s in range(0,len(nombren_pn)):
 
 	command1="/usr/bin/python3 "+"/src/doc-1.py "+"-t "+str(md)+" -s "+str(mn)+" -l 1.2_Escaneo-de-puertos-sin-utilizar-ICMP"
 
-	#print(command1)
-
 	os.system(command1)
-
-		#                   3 mover pdf
 
 
 	ml=nombren_pn[s].replace("xml","pdf")
 
 	carpetast="/src"
-	#print(carpetas)
-	dire=str(carpetast)+"/Reportes"#+str(options.output)
-	#print(dir)
+	dire=str(carpetast)+"/Reportes"
 
 	comand5="mv "+str(ml)+" "+str(dire)
-	#print(comand5)
 
 	os.system(comand5)
-
-
-	#eliminar otro
 
 	comandr="rm "+str(md)
 	os.system(comandr)
 
 
-# --------         PNMAP.XML
-
-
-#otros archivos: host activos 
-
-# diferente: filtra otra manera 
-
-#print("PNMAP.XML")
+"""
+  -----------PNMAP.XML---------
+  otros archivos: host activos 
+  diferente: filtra otra manera 
+  print("PNMAP.XML")
+"""
 
 for s in range(0,len(nombren_ap)):
 
@@ -336,12 +297,11 @@ for s in range(0,len(nombren_ap)):
 
 	os.system(comand5)  
 
-  
-# --------         SERV.XML
-
-#EScaneo de vulnerabilidades utilizando servicios obtenidos con NMAP
-
-#print("serv")
+"""
+  --------         SERV.XML
+  Escaneo de vulnerabilidades utilizando servicios obtenidos con NMAP
+  print("serv")
+"""
 
 for s in range(0,len(nombren_f)):
 
@@ -350,7 +310,6 @@ for s in range(0,len(nombren_f)):
 
 	md=nombren_f[s].replace("xml","md")
 	mi=n_f[s].replace("xml","nmap")
-	
 
 	comand="/usr/bin/python3 /src/nmap2md.py "+str(n_f[s])+" -o "+str(md)+" -c "+"'Port,Service,Script,Salida' --hs 4 --rc '[port.number]/[port.protocol]/[state],[service.name], [script.id], [script.output]'"
 	#print(comand)
@@ -360,37 +319,27 @@ for s in range(0,len(nombren_f)):
 
 	command1="/usr/bin/python3 "+"/src/doc-1.py "+"-t "+str(mi)+" -s "+str(mn)+" -l 1.3_Escaneo-de-vulnerabilidades-utilizando-servicios-obtenidos-con-NMAP"
 
-	#print(command1)
-
 	os.system(command1)
-
-	#                   3 mover pdf
 
 
 	ml=nombren_f[s].replace("xml","pdf")
 
 	carpetast="/src"
-	#print(carpetas)
-	dire=str(carpetast)+"/Reportes"#+str(options.output)
-	#print(dir)
+	dire=str(carpetast)+"/Reportes"
 
 	comand5="mv "+str(ml)+" "+str(dire)
-	#print(comand5)
 
 	os.system(comand5)
 
 
-	#eliminar otro
-
+	# eliminar otro
 	comandr="rm "+str(md)
-	#print(comandr)
 	os.system(comandr)
 
-
-
-#-------------  LNMAPTCP.XML   # 192.168.56.102vunlnmaptcp.xml
-
-#                     2 pasar a md 
+"""
+  -------------  LNMAPTCP.XML   # 192.168.56.102vunlnmaptcp.xml
+  2 pasar a md 
+"""
 
 for s in range(0,len(nombren_i)):
 
@@ -414,24 +363,17 @@ for s in range(0,len(nombren_i)):
 
 	os.system(command1)
 
-	#                   3 mover pdf
-
-
 	ml=nombren_i[s].replace("xml","pdf")
 
 	carpetast="/src"
-	#print(carpetas)
-	dire=str(carpetast)+"/Reportes"#+str(options.output)
-	#print(dir)
+	dire=str(carpetast)+"/Reportes"
 
 	comand5="mv "+str(ml)+" "+str(dire)
-	#print(comand5)
 
 	os.system(comand5)
 
 
 	#eliminar otro
-
 	comandr="rm "+str(md)
 	os.system(comandr)
 
@@ -440,7 +382,6 @@ for s in range(0,len(nombren_i)):
 
 n_n=[]
 n_h=[] 
-
 
 
 for t in l_j:
@@ -698,7 +639,8 @@ for t in pd:
 #print(n_6)
 #input("paraaaaaaaaa")
 
-merger = PdfFileMerger()
+#merger = PdfFileMerger()
+merger = PdfMerger()
 
 for pdf in n_3:
    merger.append(pdf)
@@ -718,7 +660,8 @@ os.system(comand2)
 
 #------------------
 
-merger = PdfFileMerger()
+#merger = PdfFileMerger()
+merger = PdfMerger()
 
 for pdf in n_4:
    merger.append(pdf)
@@ -790,7 +733,8 @@ for m in range(0,len(carpetas)):
 #pd1.append(pd[2])
 #pd1.append(pd[1])
 
-merger = PdfFileMerger()
+#merger = PdfFileMerger()
+merger = PdfMerger()
 
 for pdf in pd:
    merger.append(pdf)
@@ -830,7 +774,7 @@ for m in range(0,len(carpetas)):
 
 
 
-merger = PdfFileMerger()
+merger = PdfMerger()
 
 for pdf in pd:
    merger.append(pdf)
@@ -872,7 +816,7 @@ for m in range(0,len(carpetas)):
 pd1=pd
 
 
-merger = PdfFileMerger()
+merger = PdfMerger()
 
 for pdf in pd1:
    merger.append(pdf)

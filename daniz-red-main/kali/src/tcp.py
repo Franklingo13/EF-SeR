@@ -41,14 +41,12 @@ n=od2["nmaprun"]
 
 l="sin"
 
+if "host" in n:
+    ipv=n.get("host")
 
-if "hosthint" in n:
-    ipv=n.get("hosthint")
-
-# busco address:
-
-if "address" in ipv:
-    ip_info=ipv.get("address")
+	# busco address:
+    if "address" in ipv:
+    	ip_info=ipv.get("address")
 
 
 ipm=[]

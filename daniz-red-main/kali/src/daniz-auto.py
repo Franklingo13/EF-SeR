@@ -10,13 +10,8 @@ global dircompleta
 def probrarch(arch):
 	bina=os.stat(arch).st_size==0 
 	if bina==True:
-		#input("holaaaaaaaaaaaa")
 		os.system("rm -r %s" %(arch))
-	#f=open(arch,"r").read().split("\n")
-	#input(str(str(f)+str(len(f))))
-	#if len(f)==1 and f[0]=="":
-		#input("holaaaaaaaaaaaa")
-		#os.system("rm -r %s" %(arch))
+
 def logo():
 	print(color.HEADER+ '''
 ---------------------------------------------------------------
@@ -41,23 +36,23 @@ def logo():
 def nucljson(archivo):
 	abierto=open(archivo,"r").read().split("\n")
 	cont=0
-	#print(len(abierto))
 	if len(abierto)>0:
 		for i in abierto:
 			cont=cont+1
-			#print(i,"hola")
 			
 			f=open(str(cont)+".json","w")
 			f.write(i)
 			f.close
-			#subprocess.Popen(["firefox",str(cont)+".json"])
 
 		lista =[]
 		for j in range(cont-1):
 			#print(str(j+1)+".json")
 			with open(str(j+1)+".json") as file:
 		    		data = json.load(file)
-			lista.append(str(data["matched"])+"-->"+str(data["info"]["reference"]))
+			try:
+				lista.append(str(data["matched"])+"-->"+str(data["info"]["reference"]))
+			except KeyError:
+				print(data)
 		for j1 in range(cont):
 			subprocess.Popen(["rm","-r", str(j1+1)+".json"])
 		return(lista)
@@ -83,7 +78,8 @@ def correrprog(objetivo,progra,arch,conte):
 
 
 def clearScr():
-	os.system('clear')
+    print("---------------------------------------------------------------------------------------")
+	#os.system('clear')
 def seleccionmul(path,tipo1,info):
 	
 	opt=""
@@ -204,6 +200,7 @@ for objetivooo in objetivoo:
 		
 	choice = "1"#input("option: ")
 	backdoor=""
+
 	if choice == "1":
 		opt2=""
 		while opt2!="99" and backdoor!="sal":
@@ -460,24 +457,7 @@ for objetivooo in objetivoo:
 						break												
 					backdoor="sal"
 					break
-																		
-																		
-																	
-															
-											#raw_input("paraaaaa")
-											
-										
-									
-						#raw_input("hasta aqui")
-						
-				
-				
-				
-				
-								#print ("%s %s -o %s > %s" % (prog[j],programa + contenido[i],obj_fase_1,filepath+str(contenido[i])[:-3]+".txt"))
-								#raw_input("Este codigo no funciono con %s" % (prog[j]))
-				
-				#raw_input("hasta aqui vamo")
+
 			elif opt2=="2":
 				opt2man=""
 				while opt2man!="Go back":
@@ -487,7 +467,7 @@ for objetivooo in objetivoo:
 						print("Manual will be presented one by one, exit a manual with 'q'")
 						for iopt2 in opt2man:
 							os.system("less %s" %((os.getcwd())+"/modules/web/"+str(iopt2)))
-				#print("opcion 2")
+
 			elif opt2=="3":
 				opt3man=""
 				while opt3man!="Go back":
@@ -517,6 +497,7 @@ for objetivooo in objetivoo:
 		input("no existe la opcion")
 	
 	fecha=strftime("%Y-%m-%d_%H:%M:%S", gmtime())
+	
 	os.system("/usr/bin/python3 /src/pdf.py -v %s" % (str(obj_fase_1.replace("/",":"))+str(fecha)) )
 															#input("reporte creado... ")
 	nomreport="reporte-"+str(obj_fase_1.replace("/",":"))+str(fecha)+".pdf"

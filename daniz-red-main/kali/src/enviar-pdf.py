@@ -41,7 +41,10 @@ filename = parser.nombre
 
 carpetast="/src"
 	#print(carpetas)
-dire=str(carpetast)+"/Reporte_final/"+str(parser.nombre)#+str(options.output)
+dire=str(carpetast)+"/Reporte_final/"+str(parser.nombre)
+
+print("Nombre de archivo a enviar: " + dire)
+
 attachment = open(dire, "rb") 
   
 p = MIMEBase('application', 'octet-stream') 
@@ -57,8 +60,12 @@ msg.attach(p)
 s = smtplib.SMTP('smtp.gmail.com', 587) 
   
 s.starttls() 
-  
-s.login(fromaddr, "hack-123") 
+
+try:
+	s.login(fromaddr, "hack-123") 
+except smtplib.SMTPAuthenticationError as serr:
+	print("Las credenciales de autentidación son incorrectas")
+	exit(0)
   
 text = msg.as_string() 
   

@@ -51,8 +51,9 @@ def nucljson(archivo):
 			datos=[]
 			with open(str(j+1)+".json") as file:
 		    		data = json.load(file)
+   
 			#lista.append(str(data["matched"])+"-->"+str(data["info"]["reference"]))
-			datos.append(str(data["templateID"]))
+			datos.append(str(data["template-id"]))
 
 			datos.append(str(data["info"]["severity"]))
 
@@ -65,7 +66,7 @@ def nucljson(archivo):
 			except:
 				datos.append("")
 
-			datos.append(str(data["matched"]))
+			datos.append(str(data["matched-at"]))
 
 			lista.append(datos)
 

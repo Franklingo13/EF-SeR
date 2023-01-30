@@ -1,59 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="https://svn.nmap.org/nmap/docs/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.91 scan initiated Tue Aug 31 00:20:32 2021 as: nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.0.0/24 -->
-<nmaprun scanner="nmap" args="nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.0.0/24" start="1630369232" startstr="Tue Aug 31 00:20:32 2021" version="7.91" xmloutputversion="1.05">
+<!-- Nmap 7.93 scan initiated Sun Jan 29 23:36:44 2023 as: nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.49.111 -->
+<nmaprun scanner="nmap" args="nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.49.111" start="1675035404" startstr="Sun Jan 29 23:36:44 2023" version="7.93" xmloutputversion="1.05">
 <verbose level="0"/>
 <debugging level="0"/>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.1" addrtype="ipv4"/>
-<address addr="70:4F:57:94:54:1E" addrtype="mac" vendor="Tp-link Technologies"/>
-<hostnames>
-<hostname name="_gateway" type="PTR"/>
-</hostnames>
-<times srtt="590" rttvar="3771" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.100" addrtype="ipv4"/>
-<address addr="C8:2B:96:60:9B:7F" addrtype="mac" vendor="Espressif"/>
-<hostnames>
-</hostnames>
-<times srtt="92861" rttvar="92861" to="464305"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.101" addrtype="ipv4"/>
-<address addr="34:AF:B3:A7:18:8E" addrtype="mac"/>
-<hostnames>
-</hostnames>
-<times srtt="100466" rttvar="100466" to="502330"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.104" addrtype="ipv4"/>
-<address addr="00:D8:61:AA:C3:0A" addrtype="mac" vendor="Micro-star Intl"/>
-<hostnames>
-</hostnames>
-<times srtt="256" rttvar="5000" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.110" addrtype="ipv4"/>
-<address addr="08:00:27:42:51:79" addrtype="mac" vendor="Oracle VirtualBox virtual NIC"/>
-<hostnames>
-</hostnames>
-<times srtt="262" rttvar="5000" to="100000"/>
-</host>
-<host><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.0.111" addrtype="ipv4"/>
-<address addr="06:F5:71:64:D5:AE" addrtype="mac"/>
-<hostnames>
-</hostnames>
-<times srtt="17761" rttvar="19114" to="100000"/>
-</host>
 <host><status state="up" reason="localhost-response" reason_ttl="0"/>
-<address addr="192.168.0.109" addrtype="ipv4"/>
+<address addr="192.168.49.111" addrtype="ipv4"/>
 <hostnames>
-<hostname name="branel" type="PTR"/>
+<hostname name="hp" type="PTR"/>
 </hostnames>
 </host>
-<runstats><finished time="1630369235" timestr="Tue Aug 31 00:20:35 2021" summary="Nmap done at Tue Aug 31 00:20:35 2021; 256 IP addresses (7 hosts up) scanned in 2.93 seconds" elapsed="2.93" exit="success"/><hosts up="7" down="249" total="256"/>
+<runstats><finished time="1675035404" timestr="Sun Jan 29 23:36:44 2023" summary="Nmap done at Sun Jan 29 23:36:44 2023; 1 IP address (1 host up) scanned in 0.06 seconds" elapsed="0.06" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
