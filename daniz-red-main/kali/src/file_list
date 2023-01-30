@@ -1,7 +1,6 @@
-/src/archivos/hosts/fase_2/192.168.49.111nmappn.xml
-/src/archivos/hosts/fase_2/192.168.49.111nmapudp.xml
-/src/archivos/hosts/fase_2/192.168.49.111nmaptcp.xml
+/src/archivos/hosts/fase_2/192.168.56.104nmappn.xml
+/src/archivos/hosts/fase_2/192.168.56.104nmapudp.xml
+/src/archivos/hosts/fase_2/192.168.56.104nmaptcp.xml
+/src/archivos/hosts/fase_3/192.168.56.104vulners_nmap_serv.xml
+/src/archivos/hosts/fase_3/192.168.56.104vunlnmaptcp.xml
 /src/archivos/hosts/fase_1/upnmap.xml
-/src/archivos/hosts/fase_3/192.168.49.111vulners_nmap_serv.xml
-/src/archivos/hosts/fase_3/192.168.49.111vunlnmaptcp.xml
-/src/archivos/hosts/fase_3/192.168.49.111nuclei.json

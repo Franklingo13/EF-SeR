@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Mon Jan 30 23:12:46 2023 as: nmap -sV --script=vulners --script-args mincvss=7.5 --stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oA /src/archivos/hosts/fase_3/192.168.56.104vulners_nmap_serv 192.168.56.104
+Host: 192.168.56.104 ()	Status: Up
+Host: 192.168.56.104 ()	Ports: 	Ignored State: filtered (1000)
+# Nmap done at Mon Jan 30 23:12:51 2023 -- 1 IP address (1 host up) scanned in 5.15 seconds
