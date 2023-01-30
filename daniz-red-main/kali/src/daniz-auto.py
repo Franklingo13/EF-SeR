@@ -147,21 +147,21 @@ import argparse
 parser=argparse.ArgumentParser(description="Automatic daniz-red execution")
 parser.add_argument("-c", "--config", help="Configuration file")
 parser=parser.parse_args() 
-#conf1=json.load(open(str(parser.config),"r"))
+#conf1=json.load(open(str(parser.config),"r"))  #L150
 #input(conf1["target"])
 #conf=open(str(parser.config),"r").read().split("\n")[:-1]
 
 #if len(conf) >= 2:
 #correo=conf1["e-mail"]
-correo=conf1["franklin.gomez@ucuenca.edu.ec"]
+correo="franklin.gomez@ucuenca.edu.ec"
 s=open("/src/correo.txt","w")
 s.write(correo)
 s.close()
 #interfaz=conf1["interface"]
-interfaz=conf1["enp0s3"]
+interfaz="enp0s3"
 try:
 	#objetivo=conf1["target"]
-	objetivo=["192.168.56.104"]
+	objetivo="192.168.56.104"
 except:
 	objetivo=""
 #else:
