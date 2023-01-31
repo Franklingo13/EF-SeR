@@ -154,9 +154,9 @@ parser=parser.parse_args()
 #if len(conf) >= 2:
 #correo=conf1["e-mail"]
 correo="franklin.gomez@ucuenca.edu.ec"
-s=open("/src/correo.txt","w")
-s.write(correo)
-s.close()
+#s=open("/src/correo.txt","w")
+#s.write(correo)
+#s.close()
 #interfaz=conf1["interface"]
 interfaz="enp0s3"
 try:
