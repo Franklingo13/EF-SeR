@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="https://svn.nmap.org/nmap/docs/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.93 scan initiated Tue Jan 31 00:20:01 2023 as: nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.56.104 -->
-<nmaprun scanner="nmap" args="nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.56.104" start="1675124401" startstr="Tue Jan 31 00:20:01 2023" version="7.93" xmloutputversion="1.05">
+<!-- Nmap 7.93 scan initiated Tue Jan 31 01:38:30 2023 as: nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.56.104 -->
+<nmaprun scanner="nmap" args="nmap -sn -&#45;stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oX /src/archivos/hosts/fase_1/upnmap.xml 192.168.56.104" start="1675129110" startstr="Tue Jan 31 01:38:30 2023" version="7.93" xmloutputversion="1.05">
 <verbose level="0"/>
 <debugging level="0"/>
-<host><status state="up" reason="reset" reason_ttl="255"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.56.104" addrtype="ipv4"/>
+<address addr="08:00:27:F2:C3:90" addrtype="mac" vendor="Oracle VirtualBox virtual NIC"/>
 <hostnames>
 </hostnames>
-<times srtt="593" rttvar="5000" to="100000"/>
+<times srtt="397" rttvar="5000" to="100000"/>
 </host>
-<runstats><finished time="1675124401" timestr="Tue Jan 31 00:20:01 2023" summary="Nmap done at Tue Jan 31 00:20:01 2023; 1 IP address (1 host up) scanned in 0.17 seconds" elapsed="0.17" exit="success"/><hosts up="1" down="0" total="1"/>
+<runstats><finished time="1675129111" timestr="Tue Jan 31 01:38:31 2023" summary="Nmap done at Tue Jan 31 01:38:31 2023; 1 IP address (1 host up) scanned in 0.10 seconds" elapsed="0.10" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
