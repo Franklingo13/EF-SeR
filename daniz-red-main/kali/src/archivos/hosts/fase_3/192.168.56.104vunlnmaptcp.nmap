@@ -1,8 +1,1 @@
-# Nmap 7.93 scan initiated Mon Jan 30 23:10:31 2023 as: nmap -v -sS --script=vuln --stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oA /src/archivos/hosts/fase_3/192.168.56.104vunlnmaptcp 192.168.56.104
-Nmap scan report for 192.168.56.104
-Host is up (0.0023s latency).
-All 1000 scanned ports on 192.168.56.104 are in ignored states.
-Not shown: 1000 filtered tcp ports (no-response)
-
-Read data files from: /usr/bin/../share/nmap
-# Nmap done at Mon Jan 30 23:10:48 2023 -- 1 IP address (1 host up) scanned in 16.56 seconds
+# Nmap 7.93 scan initiated Tue Jan 31 00:47:44 2023 as: nmap -v -sS --script=vuln --stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oA /src/archivos/hosts/fase_3/192.168.56.104vunlnmaptcp 192.168.56.104
