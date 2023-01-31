@@ -1,1 +1,0 @@
-# Nmap 7.93 scan initiated Tue Jan 31 02:00:16 2023 as: nmap -v -sS --script=vuln --stylesheet=https://svn.nmap.org/nmap/docs/nmap.xsl -oA /src/archivos/hosts/fase_3/192.168.56.104vunlnmaptcp 192.168.56.104
